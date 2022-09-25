@@ -1,0 +1,26 @@
+import re
+
+
+X = 'Os meus 2 números favoritos são o 11 e o 29.'
+encontrar = re.findall('[0-9]', X)  # apenas um caracter (ex: 1, 5, 7)
+maisencontrar = re.findall('[0-9]+', X)  # um ou mais caracteres ( ex: 2, 34, 334)
+print(encontrar)
+print(maisencontrar)
+
+
+line = 'from rucamir2004@gmail.com Sat Feb 23 12.28'
+track_um = re.findall('@([^ ]*)', line)  # aparece 'gmail.com'
+track_dois = re.findall('@([^ ])', line)  # aparece 'g'
+melhor_track = re.findall('from.*@([^ ]*)', line)  # mais eficiente
+print(track_um)
+print(track_dois)
+print(melhor_track)
+
+x = 'I just received €10,00 for cookies!'
+filtrar = re.findall('\€[0-9,]+', x)  # €10,00
+print(filtrar)
+
+
+x = 'From: Using the : character'
+y = re.findall('^F.+:', x)
+print(y)
